@@ -15,13 +15,14 @@ pcbZ = 1.6; // thickness
 pcbOX = caseX - caseR/2 - pcbX - 10; // offset (bottom right corner)
 pcbOY = caseY - caseR/2 - pcbY; // offset (bottom right corner)
 pcbOZ = bottomZ; // offset, bottom of pcb
+pcbToCeiling = topZ-thickness-pcbZ; // distance from top of PCB to the case above it
+switchHeight = 5; // height from PCB to top of tact switch
 
 // alignment/fastening tabs
 tabsFromEdge = 5;
 tabLength = 20;
 tabHeight = 10;
 tabScrewHoleD = 3;
-
 
 // standoffs
 standoffID = 3; // screw hole diameter
@@ -30,6 +31,8 @@ standoffOD = 7; // outside diameter
 // button, potentiometer and LED hole sizes
 buttonX = 11.5;
 buttonY = 8.5;
+buttonR = 1.5; // corner rounding
+buttonClearance = 0.5;
 ledD = 3.5;
 potD = 7; // diameter of threaded "neck"
 

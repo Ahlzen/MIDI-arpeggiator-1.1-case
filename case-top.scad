@@ -3,7 +3,7 @@ include <common.scad>
 
 module button(x,y) {
   translate([pcbOX+x, pcbOY+pcbY-y, 0]) {
-    cube([buttonX, buttonY, 100], center=true);
+    roundedBox([buttonX, buttonY, 100], buttonR, true);
 }}
 
 module led(x,y) {
