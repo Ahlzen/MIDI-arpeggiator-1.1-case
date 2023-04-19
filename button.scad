@@ -1,6 +1,8 @@
 include <MCAD/boxes.scad>
 include <common.scad>
 
+$fn = $preview ? 15 : 40;
+
 topHeight = 2+thickness;
 bottomHeight = pcbToCeiling - switchHeight;
 

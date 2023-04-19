@@ -1,6 +1,8 @@
 include <MCAD/boxes.scad>
 include <common.scad>
 
+$fn = $preview ? 15 : 40;
+
 module standoff(x, y) {
   translate([pcbOX+x, pcbOY+pcbY-y, thickness-e]) {
     cylinder(h=1.5, d1=standoffOD+3, d2=standoffOD); // fillet

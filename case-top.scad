@@ -1,6 +1,8 @@
 include <MCAD/boxes.scad>
 include <common.scad>
 
+$fn = $preview ? 15 : 40;
+
 module button(x,y) {
   translate([pcbOX+x, pcbOY+pcbY-y, 0]) {
     roundedBox([buttonX, buttonY, 100], buttonR, true);
