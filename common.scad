@@ -3,7 +3,7 @@ caseY = 110;
 caseZ = 30; // total height
 bottomZ = 20; // height of bottom part
 topZ = caseZ-bottomZ; // height of top part
-caseR = 5; // corner radius
+caseR = 4; // corner radius
 thickness = 2;
 innerR = caseR-thickness;
 
@@ -22,10 +22,10 @@ switchHeight = 5; // height from PCB to top of tact switch
 tabsFromEdge = 5;
 tabLength = 20;
 tabHeight = 10;
-tabScrewHoleD = 3;
+tabScrewHoleD = 2.9; // (for #4 sheet metal screws) little loose, maybe try 2.9 or 2.8
 
 // standoffs
-standoffID = 3; // screw hole diameter
+standoffID = 2.9; // screw hole diameter (for #4 sheet metal screws) little loose, maybe try 2.9 or 2.8
 standoffOD = 7; // outside diameter
 
 // button, potentiometer and LED hole sizes
@@ -34,7 +34,7 @@ buttonY = 8.5;
 buttonR = 1.5; // corner rounding
 buttonClearance = 0.5;
 ledD = 3.5;
-potD = 7; // diameter of threaded "neck"
+potD = 7.5; // diameter of threaded "neck"
 
 // hole offsets (from PCB top left)
 holeCoords = [
@@ -44,14 +44,13 @@ holeCoords = [
   [17.78, 92.71],
   [57.15, 92.71],
   [83.82, 92.71]];
-// Back edge case cutouts [from, to, height, height in top]
+// Back edge case cutouts [from, to, height, height in top part]
 // TODO: check heights
 backCutouts = [
   [0, 63, 16],
   [74, 86, 5]];
 sideCutouts = [
-  //[40, 49, 6]];
-  [32, 57, 8, 3]];
+  [35, 54, 8, 3]];
   
 // Front panel holes
 buttonCoords = [ // relative to PCB origin
