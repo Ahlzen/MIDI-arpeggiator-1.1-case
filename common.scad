@@ -1,7 +1,7 @@
 caseX = 160;
 caseY = 110;
-caseZ = 30; // total height
-bottomZ = 20; // height of bottom part
+caseZ = 32; // total height
+bottomZ = 22; // height of bottom part
 topZ = caseZ-bottomZ; // height of top part
 caseR = 4; // corner radius
 thickness = 2;
@@ -29,10 +29,10 @@ standoffID = 2.9; // screw hole diameter (for #4 sheet metal screws) little loos
 standoffOD = 7; // outside diameter
 
 // button, potentiometer and LED hole sizes
-buttonX = 11.5;
+buttonX = 12.5;
 buttonY = 8.5;
 buttonR = 1.5; // corner rounding
-buttonClearance = 0.5;
+buttonClearance = 0.7;
 ledD = 3.5;
 potD = 7.5; // diameter of threaded "neck"
 
@@ -47,7 +47,7 @@ holeCoords = [
 // Back edge case cutouts [from, to, height, height in top part]
 // TODO: check heights
 backCutouts = [
-  [0, 63, 16],
+  [0, 63, 20],
   [74, 86, 5]];
 sideCutouts = [
   [35, 54, 8, 3]];

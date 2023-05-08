@@ -16,13 +16,14 @@ difference() {
   // Cut off flat top
   translate([0,0,bottomZ])
     cube([caseX, caseY, caseZ]);  
+  
   // Back cutouts
   for (i = [0:len(backCutouts)-1]) {
     cutout = backCutouts[i];
     x = pcbOX+cutout[0];
     w = cutout[1]-cutout[0];
     h = cutout[2];
-    translate([x, pcbOY+pcbY, pcbOZ-h])
+    translate([x, pcbOY+pcbY-caseR, pcbOZ-h])
       cube([w, 100, h]);
   }
   // Right side cutouts
