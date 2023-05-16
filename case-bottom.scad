@@ -44,4 +44,4 @@ for (i = [0:len(holeCoords)-1])
   standoff(holeCoords[i].x, holeCoords[i].y);
 
 // PCB (uncomment to view)
-translate([pcbOX, pcbOY, pcbOZ]) cube([pcbX, pcbY, pcbZ]);
+//pcb();

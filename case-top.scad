@@ -39,3 +39,6 @@ difference() {
     translate([potCoords[i].x, potCoords[i].y, 0])
       cylinder(d=potD, h=100);
 }
+
+// PCB (uncomment to view)
+//translate([0,0,-bottomZ]) pcb();

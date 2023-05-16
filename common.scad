@@ -10,13 +10,13 @@ thickness = 2;
 innerR = caseR-thickness;
 
 
-// top right of PCB needs to be up to the edge
+// top right of PCB needs to be close to the edge
 // so connectors line up
 pcbX = 100; // width
 pcbY = 100; // height
-pcbZ = 1.6; // thickness
-pcbOX = caseX - caseR/2 - pcbX - 10; // offset (bottom right corner)
-pcbOY = caseY - caseR/2 - pcbY; // offset (bottom right corner)
+pcbZ = 1.65; // thickness (1.6mm + copper)
+pcbOX = caseX - caseR/2 - pcbX - 6; // offset (bottom right corner)
+pcbOY = caseY - caseR/2 - pcbY - 0.5; // offset (bottom right corner)
 pcbOZ = bottomZ; // offset, bottom of pcb
 pcbToCeiling = topZ-thickness-pcbZ; // distance from top of PCB to the case above it
 switchHeight = 5; // height from PCB to top of tact switch
@@ -97,6 +97,9 @@ module cornerScrewHole() {
     cylinder(d=standoffID, h=caseZ-caseR); // screw hole (grabbing thread)
   }
 }
+module pcb(pad = 0) {
+  translate([pcbOX-pad, pcbOY-pad, pcbOZ]) cube([pcbX+2*pad, pcbY+2*pad, pcbZ]);
+}
 
 module case() {
   difference() {
@@ -120,7 +123,9 @@ module case() {
     translate([caseX,0,0]) rotate([0,0,90]) cornerScrewHole();
     translate([caseX,caseY,0]) rotate([0,0,180]) cornerScrewHole();
     translate([0,caseY,0]) rotate([0,0,270]) cornerScrewHole();
+    
+    // This cut out a little bit of one of the corner screw housings
+    // to ensure it doesn't collide with the PCB
+    pcb(0.2);
   }
 }
-
-//case();
