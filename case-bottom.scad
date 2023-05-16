@@ -26,6 +26,7 @@ difference() {
     translate([x, pcbOY+pcbY-caseR, pcbOZ-h])
       cube([w, 100, h]);
   }
+  
   // Right side cutouts
   for (i = [0:len(sideCutouts)-1]) {
     cutout = sideCutouts[i];
@@ -35,13 +36,6 @@ difference() {
     translate([pcbOX+pcbX, y, pcbOZ-h])
       cube([100, w, h]);
   }
-  // holes
-  translate([tabsFromEdge+tabLength/2, 0, bottomZ-tabHeight/2])
-    rotate([-90,0,0])
-      cylinder(h=1000, d=tabScrewHoleD);
-  translate([caseX-tabsFromEdge-tabLength/2, 0, bottomZ-tabHeight/2])
-    rotate([-90,0,0])
-      cylinder(h=1000, d=tabScrewHoleD);
 }
 
 // Standoffs
@@ -50,4 +44,4 @@ for (i = [0:len(holeCoords)-1])
   standoff(holeCoords[i].x, holeCoords[i].y);
 
 // PCB (uncomment to view)
-//translate([pcbOX, pcbOY, pcbOZ]) cube([pcbX, pcbY, pcbZ]);
+translate([pcbOX, pcbOY, pcbOZ]) cube([pcbX, pcbY, pcbZ]);

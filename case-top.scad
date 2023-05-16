@@ -39,23 +39,3 @@ difference() {
     translate([potCoords[i].x, potCoords[i].y, 0])
       cylinder(d=potD, h=100);
 }
-
-// alignment/fastening tabs
-difference() {
-  union() {
-    translate([tabsFromEdge, thickness, -tabHeight])
-      cube([tabLength, thickness, topZ-innerR+tabHeight]);
-    translate([caseX-tabLength-tabsFromEdge, thickness, -tabHeight])
-      cube([tabLength, thickness, topZ-innerR+tabHeight]);
-    translate([tabsFromEdge, caseY-2*thickness, -tabHeight])
-      cube([tabLength, thickness, topZ-innerR+tabHeight]);
-    translate([caseX-tabLength-tabsFromEdge, caseY-2*thickness, -tabHeight])
-      cube([tabLength, thickness, topZ-innerR+tabHeight]);
-  };
-  translate([tabsFromEdge+tabLength/2, 0, -tabHeight/2])
-    rotate([-90,0,0])
-      cylinder(h=1000, d=tabScrewHoleD);
-  translate([caseX-tabsFromEdge-tabLength/2, 0, -tabHeight/2])
-    rotate([-90,0,0])
-      cylinder(h=1000, d=tabScrewHoleD);
-}
