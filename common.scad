@@ -2,7 +2,7 @@ include <MCAD/boxes.scad>
 
 caseX = 160;
 caseY = 110;
-caseZ = 32; // total height
+caseZ = 30; // total height
 bottomZ = 22; // height of bottom part
 topZ = caseZ-bottomZ; // height of top part
 caseR = 4; // corner radius
@@ -39,6 +39,8 @@ buttonX = 12.5;
 buttonY = 8.5;
 buttonR = 1.5; // corner rounding
 buttonClearance = 0.7;
+pcbSwitchX = 6.5; // switch size on PCB (if cutout needed)
+pcbSwitchY = 5.5; // switch size on PCB (if cutout needed)
 ledD = 3.5;
 potD = 7.5; // diameter of threaded "neck"
 
