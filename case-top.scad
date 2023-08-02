@@ -9,9 +9,11 @@ module button(x,y) {
 }}
 
 module led(x,y) {
-  translate([pcbOX+x, pcbOY+pcbY-y, pcbZ+pcbToCeiling]) {
-    // flare LED for better viewing angle if not flush with surface
-    cylinder(d1=ledD, d2=ledD+16, h=10);
+  translate([pcbOX+x, pcbOY+pcbY-y, pcbZ+pcbToCeiling-e]) {
+    // flare LED hole slightly for better viewing angle if not
+    // flush with surface
+    cylinder(d=ledD, h=10);
+    translate([0,0,0.7]) cylinder(d1=ledD, d2=ledD+16, h=10);
 }}
 
 difference() {
