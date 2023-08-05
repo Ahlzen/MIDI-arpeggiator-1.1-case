@@ -7,7 +7,7 @@ topHeight = 2+thickness;
 minBottomHeight = 2;
 bottomHeight = max(2, pcbToCeiling - switchHeight);
 totalHeight = topHeight + bottomHeight;
-cutoutDepth = - (pcbToCeiling - switchHeight - bottomHeight);
+cutoutDepth = - (pcbToCeiling - switchHeight);
 
 module button() {
   hull() {
@@ -37,7 +37,9 @@ difference() {
   // Cutouts to allow enough clearance for pushbuttons on PCB,
   // if needed
   for (buttonCoord = buttonCoords)
-    translate([buttonCoord.x, 0, -50-bottomHeight+cutoutDepth])
-        roundedBox([pcbSwitchX, pcbSwitchY, 100], 1, true);  
+    //translate([buttonCoord.x, 0, -50-bottomHeight+cutoutDepth])
+    //    roundedBox([pcbSwitchX, pcbSwitchY, 100], 1, true);  
+    translate([buttonCoord.x, 0, -bottomHeight+cutoutDepth/2-e])
+      roundedBox([pcbSwitchX, pcbSwitchY, cutoutDepth], 1, true);  
 }
 
