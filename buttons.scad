@@ -33,15 +33,13 @@ module zigZagString(length, segmentLength, width, thickness)
 difference() {
   
   union() {
-    // string (to keep spacing)
-    
-    
+    // string (to keep spacing)    
     translate([0,2,-bottomHeight])
       //cube([buttonCoords[len(buttonCoords)-1].x, 1, 0.2]);
-      zigZagString(buttonCoords[len(buttonCoords)-1].x, 5, 1, 0.2);
+      zigZagString(buttonCoords[len(buttonCoords)-1].x, 3, 1.2, 0.2);
     translate([0,-3,-bottomHeight])
       //cube([buttonCoords[len(buttonCoords)-1].x, 1, 0.2]);
-    zigZagString(buttonCoords[len(buttonCoords)-1].x, 5, 1, 0.2);
+    zigZagString(buttonCoords[len(buttonCoords)-1].x, 3, 1.2, 0.2);
     
 
     // buttons
@@ -52,8 +50,6 @@ difference() {
   // Cutouts to allow enough clearance for pushbuttons on PCB,
   // if needed
   for (buttonCoord = buttonCoords)
-    //translate([buttonCoord.x, 0, -50-bottomHeight+cutoutDepth])
-    //    roundedBox([pcbSwitchX, pcbSwitchY, 100], 1, true);  
     translate([buttonCoord.x, 0, -bottomHeight+cutoutDepth/2-e])
       roundedBox([pcbSwitchX, pcbSwitchY, cutoutDepth], 1, true);  
 }
