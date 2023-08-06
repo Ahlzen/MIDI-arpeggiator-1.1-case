@@ -20,14 +20,29 @@ module button() {
     roundedBox([buttonX+3, buttonY+3, bottomHeight], buttonR, true);
 }
 
+module zigZagString(length, segmentLength, width, thickness)
+  linear_extrude(thickness)
+    for (n = [0 : length/segmentLength])
+      translate([(n+.5)*segmentLength,0])
+        rotate([0,0,n % 2 == 0 ? 45 : -45])
+          square([segmentLength*sqrt(2)+width, width], center=true);
+
+//zigZagString(100, 5, 1, 0.2);
+
+
 difference() {
   
   union() {
     // string (to keep spacing)
+    
+    
     translate([0,2,-bottomHeight])
-      cube([buttonCoords[len(buttonCoords)-1].x, 1, 0.2]);
+      //cube([buttonCoords[len(buttonCoords)-1].x, 1, 0.2]);
+      zigZagString(buttonCoords[len(buttonCoords)-1].x, 5, 1, 0.2);
     translate([0,-3,-bottomHeight])
-      cube([buttonCoords[len(buttonCoords)-1].x, 1, 0.2]);
+      //cube([buttonCoords[len(buttonCoords)-1].x, 1, 0.2]);
+    zigZagString(buttonCoords[len(buttonCoords)-1].x, 5, 1, 0.2);
+    
 
     // buttons
     for (buttonCoord = buttonCoords)
@@ -42,4 +57,3 @@ difference() {
     translate([buttonCoord.x, 0, -bottomHeight+cutoutDepth/2-e])
       roundedBox([pcbSwitchX, pcbSwitchY, cutoutDepth], 1, true);  
 }
-
