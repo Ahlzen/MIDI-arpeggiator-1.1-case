@@ -36,10 +36,10 @@ difference() {
     // string (to keep spacing)    
     translate([0,2,-bottomHeight])
       //cube([buttonCoords[len(buttonCoords)-1].x, 1, 0.2]);
-      zigZagString(buttonCoords[len(buttonCoords)-1].x, 3, 1.2, 0.2);
+      zigZagString(buttonCoords[len(buttonCoords)-1].x, 2, 1.2, 0.2);
     translate([0,-3,-bottomHeight])
       //cube([buttonCoords[len(buttonCoords)-1].x, 1, 0.2]);
-    zigZagString(buttonCoords[len(buttonCoords)-1].x, 3, 1.2, 0.2);
+    zigZagString(buttonCoords[len(buttonCoords)-1].x, 2, 1.2, 0.2);
     
 
     // buttons
