@@ -7,7 +7,7 @@ topHeight = 2+thickness;
 minBottomHeight = 2;
 bottomHeight = max(2, pcbToCeiling - switchHeight);
 totalHeight = topHeight + bottomHeight;
-cutoutDepth = - (pcbToCeiling - switchHeight);
+cutoutDepth = - (pcbToCeiling - switchHeight - 0.8); // last term compensates for sagging in bridging
 
 module button() {
   hull() {
