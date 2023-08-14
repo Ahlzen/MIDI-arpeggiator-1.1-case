@@ -13,8 +13,12 @@ module led(x,y) {
     // flare LED hole slightly for better viewing angle if not
     // flush with surface
     cylinder(d=ledD, h=10);
-    translate([0,0,0.7]) cylinder(d1=ledD, d2=ledD+16, h=10);
+    translate([0,0,0.4]) cylinder(d1=ledD, d2=ledD+14, h=10);
 }}
+
+
+// turn it upside down so it's automatically oriented for 3d printing
+rotate([0,180,0])
 
 difference() {
   translate([0,0,-bottomZ])

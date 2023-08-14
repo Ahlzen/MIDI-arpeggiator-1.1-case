@@ -2,7 +2,7 @@ include <MCAD/boxes.scad>
 
 caseX = 160;
 caseY = 110;
-caseZ = 30; // total height
+caseZ = 32; // total height
 bottomZ = 22; // height of bottom part
 topZ = caseZ-bottomZ; // height of top part
 caseR = 4; // corner radius
@@ -38,7 +38,7 @@ standoffOD = 7; // outside diameter
 buttonX = 12.5;
 buttonY = 8.5;
 buttonR = 1.5; // corner rounding
-buttonClearance = 1.2; // increase/decrease if button too tight/loose in hole
+buttonClearance = 1.1; // increase/decrease if button too tight/loose in hole
 pcbSwitchX = 6.5; // switch size on PCB (if cutout needed)
 pcbSwitchY = 5.5; // switch size on PCB (if cutout needed)
 ledD = 3.5;
@@ -96,7 +96,7 @@ module cornerScrewHole() {
   translate([(thickness+cornerScrewHousingR)/2, (thickness+cornerScrewHousingR)/2, 0]) {
     cylinder(d=screwHeadDiameter, h=bottomZ-2.5); // counterbore
     cylinder(d=standoffID+1, h=bottomZ); // screw hole (clearing thread)
-    cylinder(d=standoffID, h=caseZ-caseR); // screw hole (grabbing thread)
+    cylinder(d=standoffID, h=caseZ-caseR+0.5); // screw hole (grabbing thread)
   }
 }
 module pcb(pad = 0) {
