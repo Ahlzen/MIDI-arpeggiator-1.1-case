@@ -1,6 +1,8 @@
 # MIDI-arpeggiator-1.1-case
 Case and panel artwork for MIDI Arpeggiator v1.1
 
+![Photo of case](images/ArpeggiatorV1.1.1-photo.jpg)
+
 ## Case parts
 
 These parts are created with OpenSCAD (source included) and are designed to be 3D-printed.
